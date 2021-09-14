@@ -10,10 +10,15 @@ app.listen(8080, function() {
 
 // get('경로',function)
 app.get('/pet', function(요청, 응답) {
-    응답.send('펫 용품을 쇼핑할 수 있는 페이지입니다.');
+    응답.send('펫용품을 쇼핑할 수 있는 페이지입니다.');
 });
 
 // 
-app.get('/bueaty', function(요청, 응답) {
+app.get('/beauty', function(요청, 응답) {
     응답.send('뷰티용품을 쇼핑할 수 있는 페이지입니다.');
 });
+
+app.get('/', function(요청,응답) {
+    // 파일을 보냄
+    응답.sendFile(__dirname + '/index.html')
+})
