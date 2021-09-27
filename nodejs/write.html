@@ -33,20 +33,18 @@
         </div>
       </nav>
 
-      <div>
-
-        <form>
+      <div class="container mt-4">
+        <form action="/add" method="POST">
             <div class="form-group">
-              <label for="exampleInputEmail1">할 일</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label>할 일</label>
+              <input type="text" class="form-control" name="title">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Due date</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label>Due date</label>
+              <input type="text" class="form-control" name="date">
             </div>
             <button type="submit" class="btn btn-danger">Submit</button>
           </form>
-
       </div>
       
 
