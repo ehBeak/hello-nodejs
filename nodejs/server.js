@@ -22,3 +22,7 @@ app.get('/', function(요청,응답) {
     // 파일을 보냄
     응답.sendFile(__dirname + '/index.html')
 })
+
+app.get('/write', function(요청,응답) {
+    응답.sendFile(__dirname + '/write.html')
+})
