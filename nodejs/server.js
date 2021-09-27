@@ -5,11 +5,16 @@ const app = express();
 const bodyParser = require('body-parser')
 app.use(express.urlencoded({extended : true}));
 
-// 서버 띄울 포트 번호, 띄운 후 실행 코드
-app.listen(8080, function() {
+// DB 연결
+const MongoClient = require('mongodb').MongoClient;
+MongoClient.connect('mongodb+srv://admin:1234@cluster0.hc9nj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',function (에러, client) {
+    // 서버 띄울 포트 번호, 띄운 후 실행 코드
+    app.listen(8080, function() {
     // 8080포트로 접속하면 콘솔에 아래 글 띄어주기
-    console.log('listening on 8080')
+        console.log('listening on 8080');
+    });
 });
+
 
 // get('경로',function)
 app.get('/pet', function(요청, 응답) {
