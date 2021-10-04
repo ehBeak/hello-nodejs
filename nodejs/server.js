@@ -76,3 +76,18 @@ app.get('/list', function(요청, 응답) {
         응답.render('list.ejs', {posts : 결과});
     }); // 모든 데이터 가져오기
 });
+
+app.delete('/delete', function(요청, 응답) {
+    요청.body._id = parseInt(요청.body._id);
+    console.log(요청.body);
+    db.collection('post').deleteOne(요청.body, function(에러, 결과){
+        console.log('삭제완료');
+        응답.status(200).send({ message : '성공했습니다'});
+        //응답.status(400).send({ message : '성공했습니다'});
+    })
+})
+
+
+app.get('/detail', function(요청, 응답) {
+    응답.render('detail.ejs', {})
+})
