@@ -18,7 +18,8 @@ app.use('/public', express.static('public'));
 
 var db;
 
-MongoClient.connect('mongodb+srv://admin:1234@cluster0.hc9nj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',function (에러, client) {
+//mongodb+srv://' + process.env.id + ':'+ process.env.password + '@cluster0.hc9nj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+MongoClient.connect('mongodb+srv://' + process.env.id + ':'+ process.env.password + '@cluster0.hc9nj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',function (에러, client) {
     // 연결되면 할 일
     if(에러) return console.log(에러);
 
